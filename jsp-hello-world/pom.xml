@@ -15,5 +15,16 @@
   <url>http://maven.apache.org</url>
   <build>
     <finalName>jsp-hello-world</finalName>
+    
+     <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                </configuration>
+            </plugin>
+        </plugins>
+    
   </build>
 </project>
