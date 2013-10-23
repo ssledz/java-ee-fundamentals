@@ -1,30 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+    <modelVersion>4.0.0</modelVersion>
 
-  <groupId>pl.softech.learning</groupId>
-  <artifactId>java-ee-fundamentals</artifactId>
-  <version>1.0-SNAPSHOT</version>
-  <packaging>pom</packaging>
+    <groupId>pl.softech.learning</groupId>
+    <artifactId>java-ee-fundamentals</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
 
-  <name>java-ee-fundamentals</name>
-  <url>http://maven.apache.org</url>
+    <name>java-ee-fundamentals</name>
+    <url>http://maven.apache.org</url>
 
-  <build>
-		<pluginManagement>
-			<plugins>
+    <modules>
+        <module>servlet-hello-world</module>
+        <module>jsp-hello-world</module>
+    </modules>
 
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-compiler-plugin</artifactId>
-					<version>2.3.2</version>
-					<configuration>
-						<source>1.7</source>
-						<target>1.7</target>
-					</configuration>
-				</plugin>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <version>3.1.0</version>
+                <scope>provided</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
-			</plugins>
-		</pluginManagement>
-	</build>
+    <build>
+        <pluginManagement>
+            <plugins>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>2.3.2</version>
+                    <configuration>
+                        <source>1.7</source>
+                        <target>1.7</target>
+                    </configuration>
+                </plugin>
+                
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <version>2.4</version>
+                </plugin>
+
+            </plugins>
+        </pluginManagement>
+    </build>
+    
 </project>
