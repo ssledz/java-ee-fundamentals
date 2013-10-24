@@ -11,7 +11,7 @@
   <artifactId>jsp-hello-world</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>war</packaging>
-  <name>jsp-hello-world Maven Webapp</name>
+  <name>jsp-hello-world</name>
   <url>http://maven.apache.org</url>
   <build>
     <finalName>jsp-hello-world</finalName>
