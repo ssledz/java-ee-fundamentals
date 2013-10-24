@@ -1,16 +1,23 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Copyright 2013 Sławomir Śledź <slawomir.sledz@sof-tech.pl>.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 package pl.softech.learning.servlet.basic;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Enumeration;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.annotation.WebInitParam;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -18,13 +25,9 @@ import pl.softech.learning.servlet.ServletUtil;
 
 /**
  *
- * @author ssledz
+ * @author Sławomir Śledź <slawomir.sledz@sof-tech.pl>
  */
-@WebServlet(name = "CarServlet", urlPatterns = {"/car"},
-        initParams = {
-            @WebInitParam(name = "maxValue", value = "1000"),
-            @WebInitParam(name = "minValue", value = "10")})
-public class CarServlet extends HttpServlet {
+public class AdminServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -42,11 +45,13 @@ public class CarServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet CarServlet</title>");
+            out.println("<title>Servlet AdminServlet</title>");
             out.println("</head>");
             out.println("<body>");
             ServletUtil.printBasicServletInfo(this, request, out);
             ServletUtil.printInitParameters(this, out);
+            ServletUtil.printRequestHeaders(request, out);
+            ServletUtil.printRequestParameters(request, out);
             out.println("</body>");
             out.println("</html>");
         }

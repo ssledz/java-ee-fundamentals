@@ -14,6 +14,7 @@
                 </ul>
             </li>
             <li><a href="car">CarServlet</a></li>
+            <li><a href="admin">AdminServlet</a></li>
         </ul>
     </body>
 </html>
