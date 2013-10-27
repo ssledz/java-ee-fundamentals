@@ -1,4 +1,19 @@
-package pl.softech.learning.servlet;
+/*
+ * Copyright 2013 Sławomir Śledź <slawomir.sledz@sof-tech.pl>.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package pl.softech.learning.servlet.basic;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -10,10 +25,10 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author ssledz
+ * @author Sławomir Śledź <slawomir.sledz@sof-tech.pl>
  */
-@WebServlet(urlPatterns = {"/"})
-public class HelloWorldServlet extends HttpServlet {
+@WebServlet("/read-att")
+public class ReadAttributeExample extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -26,15 +41,24 @@ public class HelloWorldServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
+        Integer req = (Integer) request.getAttribute("ts");
+        Integer session = (Integer) request.getSession().getAttribute("ts");
+        Integer app = (Integer) request.getServletContext().getAttribute("ts");
+
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Hello World Servlet</title>");
+            out.println("<title>Servlet ReadAttributeExample</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h2>Hello World!</h2>");
+            out.println("<ul>");
+            out.println(String.format("<li>Request ts: %d</li>", req));
+            out.println(String.format("<li>Session ts: %d</li>", session));
+            out.println(String.format("<li>Application ts: %d</li>", app));
+            out.println("</ul>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -66,16 +90,6 @@ public class HelloWorldServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-    }
-
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
-    @Override
-    public String getServletInfo() {
-        return "Hello World Servlet";
     }
 
 }

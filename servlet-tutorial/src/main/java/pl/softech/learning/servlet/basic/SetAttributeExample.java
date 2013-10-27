@@ -1,4 +1,19 @@
-package pl.softech.learning.servlet;
+/*
+ * Copyright 2013 Sławomir Śledź <slawomir.sledz@sof-tech.pl>.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package pl.softech.learning.servlet.basic;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -10,10 +25,10 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author ssledz
+ * @author Sławomir Śledź <slawomir.sledz@sof-tech.pl>
  */
-@WebServlet(urlPatterns = {"/"})
-public class HelloWorldServlet extends HttpServlet {
+@WebServlet("/set-att")
+public class SetAttributeExample extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -26,18 +41,17 @@ public class HelloWorldServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet Hello World Servlet</title>");
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h2>Hello World!</h2>");
-            out.println("</body>");
-            out.println("</html>");
+
+        Integer ts = Integer.parseInt(request.getParameter("ts"));
+        request.setAttribute("ts", ts);
+        request.getSession().setAttribute("ts", ts);
+        request.getServletContext().setAttribute("ts", ts);
+
+        String forward = request.getParameter("forward");
+        if (forward != null) {
+            getServletContext().getRequestDispatcher("/"+forward).forward(request, response);
         }
+
     }
 
     /**
@@ -66,16 +80,6 @@ public class HelloWorldServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-    }
-
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
-    @Override
-    public String getServletInfo() {
-        return "Hello World Servlet";
     }
 
 }
