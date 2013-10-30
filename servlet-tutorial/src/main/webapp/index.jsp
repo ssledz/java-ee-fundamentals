@@ -23,6 +23,13 @@
                     <li><a href="read-att">read-att</a></li>
                 </ul>
             </li>
+            <li>
+                Cookie Example
+                <ul>
+                    <li><a href="set-cookie">set-cookie</a></li>
+                    <li><a href="read-cookie">read-cookie</a></li>
+                </ul>
+            </li>
         </ul>
     </body>
 </html>

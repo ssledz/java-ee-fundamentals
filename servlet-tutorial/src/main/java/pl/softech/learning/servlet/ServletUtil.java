@@ -10,6 +10,7 @@ import com.google.common.collect.Collections2;
 import com.google.common.collect.Iterators;
 import java.io.PrintWriter;
 import java.util.Enumeration;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 
@@ -73,6 +74,28 @@ public class ServletUtil {
         }
 
         out.println("</ul>");
+    }
+
+    public static void printCookies(HttpServletRequest request, PrintWriter out) {
+
+        out.println("<h1>Cookies</h1>");
+        out.println("<table border=\"1\">");
+        out.println("<tr>");
+        out.println("<th>Name</th>");
+        out.println("<th>Value</th>");
+        out.println("<th>Http Cookie</th>");
+        out.println("<th>Max age</th>");
+        out.println("</tr>");
+        for (Cookie c : request.getCookies()) {
+            out.println("<tr>");
+            out.println(String.format("<td>%s</td>", c.getName()));
+            out.println(String.format("<td>%s</td>", c.getValue()));
+            out.println(String.format("<td>%s</td>", "" + c.isHttpOnly()));
+            out.println(String.format("<td>%d s</td>", c.getMaxAge()));
+            out.println("</tr>");
+        }
+        out.println("</table>");
+
     }
 
 }
