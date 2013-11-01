@@ -6,13 +6,14 @@
 package pl.softech.learning.servlet;
 
 import com.google.common.base.Joiner;
-import com.google.common.collect.Collections2;
 import com.google.common.collect.Iterators;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Enumeration;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  *
@@ -96,6 +97,23 @@ public class ServletUtil {
         }
         out.println("</table>");
 
+    }
+
+    public static void printMessage(String title, String message, HttpServletResponse response) throws IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>");
+            out.println(title);
+            out.println("</title>");
+            out.println("</head>");
+            out.println("<body>");
+            out.println(message);
+            out.println("</body>");
+            out.println("</html>");
+        }
     }
 
 }

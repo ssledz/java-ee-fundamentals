@@ -30,6 +30,15 @@
                     <li><a href="read-cookie">read-cookie</a></li>
                 </ul>
             </li>
+             <li>
+                Login Example
+                <ul>
+                    <li><a href="login.html">login form</a></li>
+                    <li><a href="login?userName=ssledz&password=abc">login?userName=ssledz&password=abc</a></li>
+                    <li><a href="secured/resource">secured resource</a></li>
+                    <li><a href="logout">logout</a></li>
+                </ul>
+            </li>
         </ul>
     </body>
 </html>
