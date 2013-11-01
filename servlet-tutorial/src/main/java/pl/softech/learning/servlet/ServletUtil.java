@@ -98,6 +98,18 @@ public class ServletUtil {
         out.println("</table>");
 
     }
+    
+    public static void printRequestAttributes(HttpServletRequest request, PrintWriter out) {
+
+        out.println("<h1>Request attributes</h1>");
+        out.println("<ul>");
+        for (Enumeration<String> e = request.getAttributeNames(); e.hasMoreElements();) {
+            String paramName = e.nextElement();
+            out.println(String.format("<li>%s: [%s]</li>", paramName, request.getAttribute(paramName)));
+        }
+
+        out.println("</ul>");
+    }
 
     public static void printMessage(String title, String message, HttpServletResponse response) throws IOException {
         response.setContentType("text/html;charset=UTF-8");

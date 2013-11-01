@@ -23,14 +23,13 @@ import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
-import javax.servlet.ServletResponseWrapper;
 import javax.servlet.annotation.WebFilter;
 
 /**
  *
  * @author Sławomir Śledź <slawomir.sledz@sof-tech.pl>
  */
-@WebFilter(filterName = "SimpleLayoutFilter", urlPatterns = {"/layout-1/*"})
+@WebFilter(filterName = "SimpleLayoutFilter", urlPatterns = {"/layout/*"})
 public class SimpleLayoutFilter implements Filter {
 
     public SimpleLayoutFilter() {

@@ -18,7 +18,7 @@ import pl.softech.learning.servlet.ServletUtil;
  *
  * @author ssledz
  */
-@WebServlet(name = "AccountServlet", urlPatterns = {"/account"})
+@WebServlet(name = "AccountServlet", urlPatterns = {"/account", "/log/account"})
 public class AccountServlet extends HttpServlet {
 
     /**

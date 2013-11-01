@@ -30,7 +30,7 @@ import javax.servlet.annotation.WebInitParam;
  *
  * @author Sławomir Śledź <slawomir.sledz@sof-tech.pl>
  */
-@WebFilter(filterName = "LogginFilter", urlPatterns = {"/*"}, initParams = {
+@WebFilter(filterName = "LogginFilter", urlPatterns = {"/log/*"}, initParams = {
     @WebInitParam(name = "debug", value = "true")})
 public class LogginFilter implements Filter {
 

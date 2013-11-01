@@ -27,8 +27,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Sławomir Śledź <slawomir.sledz@sof-tech.pl>
  */
-@WebServlet(urlPatterns =  {"/layout-1/main", "/main"})
-public class Layouted1ServletExample extends HttpServlet {
+@WebServlet(urlPatterns =  {"/layout/layout-example", "/layout-example"})
+public class LayoutedServletExample extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>

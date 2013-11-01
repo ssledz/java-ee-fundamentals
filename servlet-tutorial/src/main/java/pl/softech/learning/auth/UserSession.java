@@ -16,11 +16,14 @@
 
 package pl.softech.learning.auth;
 
+import javax.servlet.http.HttpSessionBindingEvent;
+import javax.servlet.http.HttpSessionBindingListener;
+
 /**
  *
  * @author Sławomir Śledź <slawomir.sledz@sof-tech.pl>
  */
-public class UserSession {
+public class UserSession implements HttpSessionBindingListener {
     
     private String userName;
 
@@ -30,6 +33,23 @@ public class UserSession {
 
     public String getUserName() {
         return userName;
+    }
+
+    @Override
+    public String toString() {
+        return "UserSession{" + "userName=" + userName + '}';
+    }
+    
+    
+
+    @Override
+    public void valueBound(HttpSessionBindingEvent event) {
+        event.getSession().getServletContext().log("Binding " + this);
+    }
+
+    @Override
+    public void valueUnbound(HttpSessionBindingEvent event) {
+        event.getSession().getServletContext().log("Unbinding " + this);
     }
     
 }
