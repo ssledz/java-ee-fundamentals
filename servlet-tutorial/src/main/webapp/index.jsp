@@ -53,6 +53,8 @@
                     <li><a href="async-example?sleep=5000&timeout=1000">async-example?sleep=5000&timeout=1000</a></li>
                 </ul>
             </li>
+            <li><a href="web-talk.html">Web Talk</a></li>
+            <li><a href="upload-form.html">Upload form</a></li>
         </ul>
     </body>
 </html>
