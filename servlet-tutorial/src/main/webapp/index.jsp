@@ -55,6 +55,14 @@
             </li>
             <li><a href="web-talk.html">Web Talk</a></li>
             <li><a href="upload-form.html">Upload form</a></li>
+            <li>
+                Container Authorisation Example
+                <ul>
+                    <li><a href="secured-resource">secured-resource</a></li>
+                    <li><a href="auth?action=login">login</a></li>
+                    <li><a href="auth?action=logout">logout</a></li>
+                </ul>
+            </li>
         </ul>
     </body>
 </html>
