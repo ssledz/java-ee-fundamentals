@@ -15,10 +15,10 @@
  */
 package pl.softech.learning.auth.container;
 
-import java.beans.Transient;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.HttpConstraint;
+import javax.servlet.annotation.HttpMethodConstraint;
 import javax.servlet.annotation.ServletSecurity;
 import javax.servlet.annotation.ServletSecurity.TransportGuarantee;
 import javax.servlet.annotation.WebServlet;
@@ -33,8 +33,15 @@ import pl.softech.learning.servlet.ServletUtil;
  */
 @WebServlet("/secured-resource")
 @ServletSecurity(
-        @HttpConstraint(transportGuarantee = TransportGuarantee.NONE,
-                rolesAllowed = {"Role1", "Role3"}))
+        value = @HttpConstraint(
+                transportGuarantee = TransportGuarantee.NONE,
+                rolesAllowed = {"Role2"}),
+        httpMethodConstraints = {
+            @HttpMethodConstraint(value = "GET",
+                    rolesAllowed = {"Role1", "Role3"}),
+            @HttpMethodConstraint(value = "POST",
+                    rolesAllowed = {"Role1"})
+        })
 public class SecuredResource extends HttpServlet {
 
     /**
