@@ -1,0 +1,5 @@
+<ul>
+    <li><a href="main-fragment-example.jsp">Main</a></li>
+    <li><a href="secondary-fragment-example.jsp">Secondary</a></li>
+</ul>
+<h1>Current page: <%= pageName %></h1>
