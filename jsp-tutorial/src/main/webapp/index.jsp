@@ -8,6 +8,7 @@
     <body>
         <ul>
             <li><a href="print-current-date.jsp">Print current date example</a></li>
+            <li><a href="jsp-action-example.jsp">JSP action example</a></li>
 
             <li>JavaBean example
                 <ul>
