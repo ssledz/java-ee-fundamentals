@@ -38,9 +38,10 @@
             <ul>
               <li><a href="fmt-jstl-example.jsp?locale=pl_pl">fmt-jstl-example.jsp?locale=pl_pl</a></li>
               <li><a href="fmt-jstl-example.jsp?locale=en_gb">fmt-jstl-example.jsp?locale=en_gb</a></li>
-
             </ul>
           </li>
+          <li><a href="sql-jstl-example.jsp">Sql JSTL</a></li>
+          <li><a href="xml-jstl-example.jsp">Xml JSTL</a></li>
         </ul>
       </li>
     </ul>
