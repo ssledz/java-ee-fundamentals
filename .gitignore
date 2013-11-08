@@ -4,3 +4,7 @@
 /jsp-tutorial/target/
 /jsp-tutorial/nb-configuration.xml
 /servlet-tutorial/nb-configuration.xml
+/jdbc-tutorial/target/
+/jdbc-tutorial/nb-configuration.xml
+/jdbc-tutorial/nbactions-sqlinjection.xml
+/jdbc-tutorial/nbactions.xml
