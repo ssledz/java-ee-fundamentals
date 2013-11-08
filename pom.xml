@@ -14,6 +14,7 @@
     <module>servlet-hello-world</module>
     <module>jsp-hello-world</module>
     <module>servlet-tutorial</module>
+    <module>jsp-tutorial</module>
     <module>jdbc-tutorial</module>
   </modules>
 
