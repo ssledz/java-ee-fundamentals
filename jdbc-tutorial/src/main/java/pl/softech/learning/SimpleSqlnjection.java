@@ -28,6 +28,9 @@ import java.util.Properties;
  */
 public class SimpleSqlnjection {
 
+  /**
+   *  pl.softech.learning.SimpleSqlnjection '""' '"" or 1 = 1'
+   */
   public static void main(String[] args) throws SQLException {
 
     Properties connectionProps = new Properties();
