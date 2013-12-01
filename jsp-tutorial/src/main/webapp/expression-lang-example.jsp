@@ -14,7 +14,7 @@
             <li>firstName: ${param["firstName"]}</li>
             <li>referer: ${header["Referer"]}</li>
             <li>cookie[JSESSIONID]: ${cookie["JSESSIONID"].value}</li>
-            <li>firstName: ${requestScope["customer"]}</li>
+            <li>customer ${requestScope["customer"]}</li>
             <li>firstName: ${requestScope["customer"]["firstName"]}</li>
             <li>firstName: ${requestScope["customer"].firstName}</li>
         </ul>
